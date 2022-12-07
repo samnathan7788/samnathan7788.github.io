@@ -12,24 +12,6 @@
 /* eslint-disable key-spacing */
 
 async function mainEvent() {
-    const results = await fetch('/api/foodServicePG');
-    const arrayFromJson = await results.json(); // here is where we get the data from our request as JSON
-
-    /*
-        Below this comment, we log out a table of all the results using "dot notation"
-        An alternate notation would be "bracket notation" - arrayFromJson["data"]
-        Dot notation is preferred in JS unless you have a good reason to use brackets
-        The 'data' key, which we set at line 38 in foodServiceRoutes.js, contains all 1,000 records we need
-    */
-    console.table(arrayFromJson.data);
-
-    // in your browser console, try expanding this object to see what fields are available to work with
-    // for example: arrayFromJson.data[0].name, etc
-    console.log(arrayFromJson.data[0]);
-
-    // this is called "string interpolation" and is how we build large text blocks with variables
-    console.log(`${arrayFromJson.data[0].name} ${arrayFromJson.data[0].category}`);
-
   let image1 = document.getElementById('image1');
   let image2 = document.getElementById('image2');
 
